@@ -207,7 +207,7 @@ public class PrestamoService {
     }
     
     public static List<Prestamo> listarPrestamos(){
-        
+        System.out.println("Esto deberia modificar");
         List<Prestamo> prestamos = null;
         try {
             EntityManagerFactory ef = Persistence.createEntityManagerFactory("Libreria_PU");
