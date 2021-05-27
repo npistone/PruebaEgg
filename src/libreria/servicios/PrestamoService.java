@@ -161,7 +161,7 @@ public class PrestamoService {
         
     }
     
-     public static List<Prestamo> buscaPrestamosDoc(Integer doc) throws Exception {
+     public static List<Prestamo> buscaPrestamoId(Integer id) throws Exception {
 
         List<Prestamo> prestamos = null;
         try {
@@ -170,8 +170,8 @@ public class PrestamoService {
 
             EntityManager em = ef.createEntityManager();
 
-            prestamos = em.createQuery("SELECT p FROM Prestamo p  WHERE p.cliente= :dni")
-                    .setParameter("dni", doc)
+            prestamos = em.createQuery("SELECT p FROM Prestamo p  WHERE p.id= : id")
+                    .setParameter("id", id)
                     .getResultList();
         
     }
@@ -206,7 +206,7 @@ public class PrestamoService {
                       
     }
     
-    public List<Prestamo> listarPrestamos(){
+    public static List<Prestamo> listarPrestamos(){
         
         List<Prestamo> prestamos = null;
         try {
@@ -229,17 +229,5 @@ public class PrestamoService {
         return prestamos;
     }
     
-    public static Prestamo buscaPrestamoId(Integer id){
-        
-        EntityManagerFactory ef = Persistence.createEntityManagerFactory("Libreria_PU");
-
-        EntityManager em = ef.createEntityManager();
-        Prestamo prestamo ;
-        prestamo = em.find(Prestamo.class, id);
-        
-        
-        
-        
-        return prestamo;
-    }
+    
 }

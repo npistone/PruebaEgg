@@ -56,11 +56,11 @@ public class Libreria {
                         System.out.println("Ingrese el documento del cliente");
                         Integer doc = leP.nextInt();
                         List<Prestamo> prestamosActivos;
-                        prestamosActivos = PrestamoService.buscaPrestamosDoc(doc);
+                        prestamosActivos = PrestamoService.listarPrestamos();
                         if (prestamosActivos.isEmpty()) {
-                            System.out.println("No hay prestamos asociados a ese cliente");
+                            System.out.println("No hay prestamos para eliminar");
                         } else {
-                            System.out.println("Prestamos asociados a ese cliente");
+                            System.out.println("Prestamos activosgis");
                             for (Prestamo prestamosActivo : prestamosActivos) {
                                 System.out.println(prestamosActivo);
                             }
